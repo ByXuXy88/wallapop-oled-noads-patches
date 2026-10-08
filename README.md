@@ -85,7 +85,7 @@ Se ha compilado el bundle Android y se han aplicado ambos parches con el motor p
 
 Morphe firma la aplicación resultante con su propia clave. Una firma diferente impide actualizar directamente la instalación original. Comprueba los datos locales antes de desinstalarla.
 
-## 🛠️ Desarrollo
+## 🧰 Desarrollo
 
 - [Compilar y publicar](BUILDING.md).
 - [Cómo contribuir](CONTRIBUTING.md).
@@ -94,7 +94,7 @@ Morphe firma la aplicación resultante con su propia clave. Una firma diferente 
 
 GitHub Actions compila el bundle `.mpp` y publica las versiones y los metadatos que consume Morphe. No hace falta un token personal para ejecutar el flujo de publicación.
 
-## ℹ️ Acerca del proyecto
+## 📖 Acerca del proyecto
 
 Fuente independiente de parches, sin afiliación con Wallapop o Morphe. Código bajo [GPL-3.0](LICENSE); atribuciones en [NOTICE.md](NOTICE.md). El repositorio distribuye los parches, sin APK de Wallapop ni claves de firma.
 
