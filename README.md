@@ -1,79 +1,101 @@
-# Wallapop OLED + No Ads
+# 👋🧩 ByXuXy88's Morphe Patches
 
-Fuente de parches para Wallapop 1.334.0 (`com.wallapop`, código 10141414), diseñada para Morphe 1.34.0 con patcher 1.15.1. Wallapop requiere Android 12L o superior.
+[![Release](https://img.shields.io/github/v/release/ByXuXy88/wallapop-oled-noads-patches?label=versión)](https://github.com/ByXuXy88/wallapop-oled-noads-patches/releases/latest)
+[![Build](https://github.com/ByXuXy88/wallapop-oled-noads-patches/actions/workflows/release.yml/badge.svg)](https://github.com/ByXuXy88/wallapop-oled-noads-patches/actions/workflows/release.yml)
+[![License](https://img.shields.io/badge/licencia-GPL--3.0-blue)](LICENSE)
 
-## Esquema
-1. Publicar la fuente en GitHub.
-2. Añadirla a Morphe desde Android.
-3. Compilar y comprobar cambios.
+Parches para usar Wallapop con fondos negros OLED en modo oscuro y desactivar sus decisiones centrales de publicidad.
 
-## Parches
+> [!NOTE]
+> Proyecto independiente desarrollado con ayuda de IA. La compilación y la reconstrucción del APK están verificadas; el arranque y el aspecto en un teléfono todavía requieren pruebas.
 
-| Parche | Comportamiento |
+## Contenido
+
+- [Cómo usar los parches](#-cómo-usar-los-parches)
+- [Lista de parches](#-lista-de-parches)
+- [Problemas y solicitudes](#-problemas-y-solicitudes)
+- [Reportar errores](#-reportar-errores)
+- [Preguntas frecuentes](#-preguntas-frecuentes)
+- [Desarrollo](#-desarrollo)
+- [Acerca del proyecto](#-acerca-del-proyecto)
+
+## 📲 Cómo usar los parches
+
+**[➕ Añadir esta fuente a Morphe](https://morphe.software/add-source?github=ByXuXy88/wallapop-oled-noads-patches)**
+
+También puedes añadir manualmente esta URL en **Morphe → Fuentes → + → Remota**:
+
+```text
+https://github.com/ByXuXy88/wallapop-oled-noads-patches
+```
+
+1. Usa Morphe **1.34.0** y el paquete original completo de Wallapop **1.334.0**.
+2. Selecciona **Wallapop OLED dark mode** y **Wallapop No Ads**.
+3. Genera la aplicación y activa el **modo oscuro de Android** para ver los fondos OLED.
+
+El archivo `.mpp` también está disponible en [Releases](https://github.com/ByXuXy88/wallapop-oled-noads-patches/releases/latest) para importarlo como fuente local. Las fuentes remotas permiten buscar nuevas versiones de los parches.
+
+> [!IMPORTANT]
+> El APK utilizado para las comprobaciones es un APK base dividido y necesita sus splits de arquitectura y densidad. Por sí solo no permite una instalación completa. [Compatibilidad y resultados](PATCHES.md#compatibilidad-y-validación).
+
+## 🩹 Lista de parches
+
+> [v0.1.0](https://github.com/ByXuXy88/wallapop-oled-noads-patches/releases/tag/v0.1.0) · **2 parches en 1 aplicación** · [Detalles completos](PATCHES.md)
+
+| Aplicación | Parches | Versión compatible | Paquete |
+| --- | --- | --- | --- |
+| [Wallapop](PATCHES.md#wallapop-comwallapop) | 2 | `1.334.0` | `com.wallapop` |
+
+| Parche | Qué cambia |
 | --- | --- |
-| Wallapop OLED dark mode | Sigue el modo oscuro de Android. Las tres superficies principales de Compose usan negro puro #000000. Los colores originales de textos, iconos y marca se conservan en esa paleta. Las vistas clásicas reciben recursos de noche por función. |
-| Wallapop No Ads | Desactiva dos decisiones centrales que permiten mostrar publicidad. No desbloquea pagos ni elimina productos promocionados de vendedores. |
+| Wallapop OLED dark mode | Sigue el modo oscuro del sistema y cambia las superficies principales a negro puro `#000000`. |
+| Wallapop No Ads | Desactiva dos decisiones centrales que permiten mostrar publicidad. |
 
-El modo claro mantiene los valores originales de la paleta y los colores XML que se reemplazan por referencias temáticas. El padre del tema pasa a DayNight para habilitar los recursos de noche. No se invierten fotografías ni colores globales compartidos.
+## 📬 Problemas y solicitudes
 
-## Publicar en GitHub desde el teléfono
+¿Algo no funciona o tienes una propuesta? Consulta primero las [incidencias existentes](https://github.com/ByXuXy88/wallapop-oled-noads-patches/issues).
 
-1. Crea un repositorio público llamado `wallapop-oled-noads-patches` en tu cuenta. El nombre es opcional: el flujo utiliza automáticamente el repositorio donde se ejecuta.
-2. Extrae el ZIP de esta entrega. Sube **el contenido** de la carpeta del proyecto al nivel principal del repositorio, incluyendo `.github/workflows/release.yml`, `scripts`, `src`, `LICENSE` y `toolchain.lock.json`. No subas el ZIP como único archivo ni el APK de Wallapop.
-3. En **Actions → Build and release patches → Run workflow**, usa la rama `main`, versión `0.1.0`, y activa **Publish this version as a GitHub release**.
-4. Espera a que termine correctamente. El flujo actualizará también `patches-bundle.json` en la rama `main`, que es donde Morphe busca los metadatos al añadir la URL del repositorio. La release `v0.1.0` contendrá `patches-0.1.0.mpp`, `patches-bundle.json`, el listado y las huellas SHA-256.
+- [Reportar un fallo](https://github.com/ByXuXy88/wallapop-oled-noads-patches/issues/new?template=bug_report.yml).
+- [El parche falla tras actualizar Wallapop](https://github.com/ByXuXy88/wallapop-oled-noads-patches/issues/new?template=app_update.yml).
+- [Proponer una mejora](https://github.com/ByXuXy88/wallapop-oled-noads-patches/issues/new?template=feature_request.yml).
 
-No necesitas crear ni compartir un token personal. El flujo usa el token automático de GitHub únicamente para publicar en tu propio repositorio. La compilación descarga distribuciones públicas con versiones y SHA-256 fijados; no depende de autenticarte en GitHub Packages.
+La compatibilidad está limitada a las versiones indicadas. Una versión nueva de Wallapop puede requerir cambios en el código.
 
-Subir solo código no basta para que Morphe descargue parches: es necesaria la release con el bundle Android `.mpp` y `patches-bundle.json`.
+## 🐛 Reportar errores
 
-## Añadir la fuente a Morphe
+Incluye la versión de Android, Morphe y Wallapop; la versión de la fuente de parches; el origen y formato del paquete (APK, APKM o XAPK); los pasos para reproducir el problema y el registro de parcheo de Morphe.
 
-Cuando la release exista, abre Morphe → **Sources/Fuentes → + → Remote/Remota** y pega la URL de tu repositorio. Para el nombre propuesto:
+Para problemas de OLED, indica si el modo oscuro de Android estaba activo y adjunta una captura de la pantalla afectada. Oculta conversaciones, nombres, ubicaciones y otros datos personales antes de publicar capturas o registros.
 
-`https://github.com/ByXuXy88/wallapop-oled-noads-patches`
+## ❓ Preguntas frecuentes
 
-También puedes abrir:
+### ¿OLED significa que todo pasa a negro?
 
-`https://morphe.software/add-source?github=ByXuXy88/wallapop-oled-noads-patches`
+Las tres superficies principales de Compose usan negro puro en modo oscuro. Las vistas clásicas reciben recursos de noche por función. Se conservan fotografías y los colores de marca, textos e iconos de la paleta. Algunas pantallas con colores fijados por código o WebViews pueden necesitar ajustes.
 
-Si eliges otra cuenta o nombre, cambia esas URLs. Después selecciona el APK original de Wallapop 1.334.0, activa los dos parches y genera la aplicación. Activa el modo oscuro de Android para ver el fondo OLED. Una fuente remota permite que Morphe busque versiones nuevas del paquete de parches.
+### ¿Qué anuncios elimina?
 
-Antes de publicarlo, puedes importar el `.mpp` de esta entrega como fuente **Local** y probarlo en el teléfono. Una fuente local no se actualiza automáticamente.
+El parche desactiva dos decisiones centrales de publicidad. Su alcance necesita pruebas de uso; no elimina productos promocionados por vendedores ni desbloquea servicios de pago.
 
-## Estado comprobado
+### ¿Está probado en Android?
 
-- Compilación Kotlin real contra patcher 1.15.1: correcta.
-- Conversión D8 a un bundle con clases JVM y DEX Android: correcta.
-- Carga de los parches y filtro de compatibilidad: correctos en Morphe Desktop 1.18.1, que incluye patcher 1.15.1.
-- Aplicación de ambos parches, reconstrucción completa y firma del APK suministrado: correctas.
-- Verificación independiente de la firma y comprobaciones de las modificaciones en DEX/recursos reconstruidos.
+Se ha compilado el bundle Android y se han aplicado ambos parches con el motor patcher **1.15.1**, reconstruido el APK y verificado su firma y sus cambios. La carga en Morphe Android **1.34.0**, el arranque y las pantallas en un teléfono siguen pendientes. Wallapop utiliza PairIP, que puede afectar el arranque de un APK modificado.
 
-El APK suministrado es un APK base dividido: declara `requiredSplitTypes="base__abi,base__density"` y `com.android.vending.splits.required=true`, y no incluye bibliotecas nativas. El APK reconstruido conserva esos requisitos. **No es una instalación autónoma:** para instalar desde el teléfono necesitarás el paquete completo de Wallapop 1.334.0 con los splits correspondientes, en un formato que Morphe pueda procesar. El bundle de parches es independiente de estos archivos.
+### ¿Puedo instalarlo sobre la app original?
 
-No se ha instalado ni probado visualmente en un teléfono. Los componentes con colores asignados directamente por código, WebViews y otras pantallas pueden necesitar ajustes. Wallapop utiliza PairIP: reconstruir y firmar no demuestra que permita arrancar una versión modificada. El alcance de No Ads y posibles huecos publicitarios requieren pruebas de uso.
+Morphe firma la aplicación resultante con su propia clave. Una firma diferente impide actualizar directamente la instalación original. Comprueba los datos locales antes de desinstalarla.
 
-La comprobación con el mismo motor no sustituye a probar la carga Android en Morphe 1.34.0. El `.mpp` incluye DEX para esa carga y declara patcher 1.15.1.
+## 🛠️ Desarrollo
 
-## Compilar localmente
+- [Compilar y publicar](BUILDING.md).
+- [Cómo contribuir](CONTRIBUTING.md).
+- [Historial de cambios](CHANGELOG.md).
+- [Resultados de verificación](verification/verified-apk.json).
 
-JDK 21 y Python 3.12:
+GitHub Actions compila el bundle `.mpp` y publica las versiones y los metadatos que consume Morphe. No hace falta un token personal para ejecutar el flujo de publicación.
 
-```sh
-python3 scripts/build.py --version 0.1.0 --repository TU_USUARIO/wallapop-oled-noads-patches
-```
+## ℹ️ Acerca del proyecto
 
-Salida en `build/release`. El script comprueba los hashes de sus herramientas, compila únicamente estos parches, crea el `.mpp` Android y genera los metadatos de release para el repositorio indicado.
+Fuente independiente de parches, sin afiliación con Wallapop o Morphe. Código bajo [GPL-3.0](LICENSE); atribuciones en [NOTICE.md](NOTICE.md). El repositorio distribuye los parches, sin APK de Wallapop ni claves de firma.
 
-Para comprobar un APK después de parchearlo:
-
-```sh
-python3 -m pip install androguard==4.1.4
-python3 tests/verify_patched_apk.py original.apk patched.apk
-```
-
-Para una versión nueva: cambia el código y `CHANGELOG.md`, ejecuta Actions con otro número de versión y publica la release. No reutilices números ya publicados salvo para reparar una publicación incompleta.
-
-## Firma e instalación
-
-Morphe firma el APK resultante con su propia clave. No puede actualizar directamente una instalación con otra firma. Comprueba los datos locales antes de desinstalar la aplicación original. No hay claves ni APK de Wallapop en el repositorio.
+La organización de esta documentación toma como referencia [rushiranpise/morphe-patches](https://github.com/rushiranpise/morphe-patches), con contenido propio para este proyecto.
