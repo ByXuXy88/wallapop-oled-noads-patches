@@ -1,0 +1,47 @@
+{
+  "name": "Reportar un fallo",
+  "description": "Problemas al parchear, instalar o usar la aplicación.",
+  "title": "[Fallo] ",
+  "body": [
+    {
+      "type": "input",
+      "id": "versions",
+      "attributes": {
+        "label": "Versiones",
+        "description": "Android, Morphe, Wallapop y fuente de parches (p. ej. v0.1.0)."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "package",
+      "attributes": {
+        "label": "Origen y formato del paquete",
+        "placeholder": "Origen, APK/APKM/XAPK y arquitectura"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "details",
+      "attributes": {
+        "label": "Pasos, resultado esperado y resultado obtenido"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "logs",
+      "attributes": {
+        "label": "Registros y capturas",
+        "description": "Para fallos, adjunta el registro de Morphe. Para OLED, indica el modo oscuro y la pantalla afectada. Oculta los datos personales."
+      }
+    }
+  ]
+}
