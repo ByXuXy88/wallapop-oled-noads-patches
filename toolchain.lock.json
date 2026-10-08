@@ -1,0 +1,22 @@
+{
+  "patcher_version": "1.15.1",
+  "kotlin_version": "2.4.0",
+  "min_api": 26,
+  "dependencies": [
+    {
+      "name": "desktop.jar",
+      "url": "https://github.com/MorpheApp/morphe-desktop/releases/download/v1.18.1/morphe-desktop-1.18.1-all.jar",
+      "sha256": "1b506ab5f03d16a2f65026d5e0e1910d01fc1e2152f21eaeb44ed2f30856597b"
+    },
+    {
+      "name": "r8.jar",
+      "url": "https://dl.google.com/dl/android/maven2/com/android/tools/r8/9.5.23/r8-9.5.23.jar",
+      "sha256": "748ab0ef66e85b54cec5ad83d168999db9e3dad8c8f63170e836eff195cbd09b"
+    },
+    {
+      "name": "gradle.zip",
+      "url": "https://services.gradle.org/distributions/gradle-9.7.0-bin.zip",
+      "sha256": "84fbba45c7f4c64abc77460e1c00f541e9f960e3c7ed2538f1ede19eacd873ae"
+    }
+  ]
+}
