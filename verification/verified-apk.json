@@ -1,0 +1,14 @@
+{
+  "package": "com.wallapop",
+  "version": "1.334.0",
+  "advertising_gates": "verified in rebuilt DEX",
+  "compose_black_surfaces": "verified in rebuilt DEX",
+  "system_dark_mode_selection": "verified in rebuilt DEX",
+  "daynight_parent": "verified in rebuilt resource table",
+  "black_night_colour_resources": 7,
+  "native_libraries_present_and_preserved": 0,
+  "required_split_types": "base__abi,base__density",
+  "apk_v2_signature_present": true,
+  "sha256": "cea7021a2c3cd375b6409781e2b9c04eba9259a349d738d5118df9c339db4f75",
+  "runtime": "Not installed or visually tested on a phone"
+}

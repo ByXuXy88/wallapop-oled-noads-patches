@@ -1,0 +1,30 @@
+INFO: Morphe data root: local build cache (JAR-adjacent) 
+INFO: Loading patches... 
+INFO: Initializing patcher... 
+INFO: Filtering patches for com.wallapop v1.334.0... 
+INFO: Applying 2 patches... 
+INFO: Deleting existing temporary files directory 
+INFO: Decoding all resources 
+INFO: Leaving 8 native library files in the input APK 
+INFO: Sanitizing unpatched strings 
+INFO: Escaping strings 
+INFO: Executing patches 
+INFO: Applied: Wallapop No Ads 
+Wallapop OLED: 1 theme variant(s), 140 semantic XML replacements
+INFO: Applied: Wallapop OLED dark mode 
+INFO: Compiling patched dex files (mode: FULL) 
+INFO: Processing 61877 classes in parallel (4 threads) 
+INFO: Wrote 8 dex files to compiled/patch-work/patching-1791463498241/patched/dex 
+INFO: Compiling modified resources 
+INFO: Unescaping strings 
+INFO: Processing aapt macros 
+INFO: Generating new resource IDs 
+INFO: Writing resource APK 
+INFO: Encoded 5711 of 9995 values in 53 files, 657 resource files and 0 configurations of patches for com.wallapop 
+INFO: Resource APK inputs: reusing 3139 unchanged archive entries, rebuilding 659 entries, dropping 0 entries 
+INFO: Resource APK scan: 400ms write: 1s 
+INFO: Using compiled resource APK as output base 
+INFO: Aligning APK 
+INFO: Signing APK 
+INFO: Saved to compiled/Wallapop-OLED-NoAds.apk 
+INFO: Patching result saved to compiled/patch-result.json 

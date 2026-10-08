@@ -1,0 +1,1 @@
+{"packageName":"com.wallapop","packageVersion":"1.334.0","patchingSteps":[{"step":"PATCHING","success":true},{"step":"REBUILDING","success":true},{"step":"SIGNING","success":true}],"appliedPatches":[{"name":"Wallapop No Ads"},{"name":"Wallapop OLED dark mode"}],"failedPatches":[]}
